@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest
+    ApplicationTypeName="CounterActorApplicationType"
+    ApplicationTypeVersion="1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Description>CounterActor Application</Description>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="CounterActorWebServicePkg" ServiceManifestVersion="1.0.0" />
+  </ServiceManifestImport>
+  <Parameters>
+    <Parameter Name="CounterActorWebService_InstanceCount" DefaultValue="1" />
+    <Parameter Name="CounterActor_PartitionCount" DefaultValue="1" />
+    <Parameter Name="CounterActor_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="CounterActor_TargetReplicaSetSize" DefaultValue="3" />
+  </Parameters>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="CounterActorPkg" ServiceManifestVersion="1.0.0" />
+  </ServiceManifestImport>
+  <DefaultServices>
+    <Service Name="CounterActorWebService">
+      <StatelessService ServiceTypeName="CounterActorWebServiceType" InstanceCount="[CounterActorWebService_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="CounterActor">
+      <StatefulService ServiceTypeName="CounterActorType" TargetReplicaSetSize="[CounterActor_TargetReplicaSetSize]" MinReplicaSetSize="[CounterActor_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[CounterActor_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+  </DefaultServices>
+</ApplicationManifest>

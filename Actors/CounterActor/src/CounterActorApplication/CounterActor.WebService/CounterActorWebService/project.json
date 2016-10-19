@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0-*",
+  "description": "Stateless Web Service for Stateful CounterActor App",
+  "authors": [ " "  ],
+
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "CounterActor.Interfaces": "1.0.0-*",
+    "Microsoft.CSharp": "4.0.1",
+    "Microsoft.ServiceFabric.Actors":"0.6.0-preview-01",
+    "Microsoft.AspNetCore.Hosting": "1.0.0",
+    "Microsoft.AspNetCore.Owin": "1.0.0",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Microsoft.ServiceFabric.Services": "0.6.0-preview-01",
+    "System.Collections": "4.0.11",
+    "System.Console": "4.0.0",
+    "System.Diagnostics.StackTrace": "4.0.1",
+    "System.Linq": "4.1.0",
+    "System.Threading": "4.0.11",
+    "System.Threading.Tasks": "4.0.11",
+    "System.Threading.Thread": "4.0.0",
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [ "dnxcore50", "portable-net45+win8" ]
+    }
+  }
+}
