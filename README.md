@@ -16,17 +16,17 @@ The samples are divided by the category and [Service Fabric programming model][s
 ### CounterActor
 
 Counter Actor provides an example of a very simple actor which implements a counter. Once the service is deployed you can run the testclient to see the output of the counter on console. 
-The application includes a OWIN self hosting based web service, modeled as Service Fabric reliable stateless service, accessible at http://<clusteraddress>:20003 where you can see the effect of counter incrementing on the web UI.
+The application includes a OWIN self hosting based web service, modeled as Service Fabric reliable stateless service, accessible at http://&lt;clusteraddress&gt;:20003. where you can see the effect of counter incrementing on the web UI.
 
 ### CalculatorActor
 
 Calculator Actor sample uses the actor programming model to implement two basic calculator operations, add and subtract. Once the service is deployed you can run the testclient to see the output of the calculator on console.
 
 ## Compiling the samples
-For compiling the samples use the build.sh sample provided along with the sample which will use .NET core framework configured as part of the Service Fabric installation to compile the sample.
+For compiling the samples use the build.sh script provided along with the sample which will use .NET core framework configured as part of the Service Fabric installation to compile the sample.
 
 ## Deploying the samples
-All the samples once compiled can be deployed immediately using the install.sh scripts provided along with the sample. These scripts underneath uses azurecli. Before running the scripts you need to first connect to the cluster using azurecli.
+All the samples once compiled can be deployed immediately using the install.sh script provided along with the sample. These scripts underneath uses azurecli. Before running the scripts you need to first connect to the cluster using azurecli.
 
 ## More information
 
