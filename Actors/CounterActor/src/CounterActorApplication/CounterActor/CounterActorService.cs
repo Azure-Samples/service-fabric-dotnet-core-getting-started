@@ -52,6 +52,7 @@ namespace CounterActorApp
 
         Task<int> ICounterActor.GetCountAsync()
         {
+            ActorEventSource.Current.Message("Count is {0}", this.StateManager.GetStateAsync<int>("count").Result);
             return this.StateManager.GetStateAsync<int>("count");
         }
 

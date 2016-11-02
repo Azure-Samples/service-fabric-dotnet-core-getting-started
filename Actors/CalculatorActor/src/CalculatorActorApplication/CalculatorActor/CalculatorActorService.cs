@@ -21,12 +21,16 @@ namespace CalculatorActorApp
 
         public Task<double> AddAsync(double valueOne, double valueTwo)
         {
-            return Task.FromResult(valueOne + valueTwo);
+            Task<double> sum = Task.FromResult(valueOne + valueTwo);
+            ActorEventSource.Current.Message("Result of Add operation on {0}, {1} : {2}", new object[] {valueOne, valueTwo, sum.Result});
+            return sum;
         }
 
         public Task<double> SubtractAsync(double valueOne, double valueTwo)
         {
-            return Task.FromResult(valueOne - valueTwo);
+            Task<double> difference = Task.FromResult(valueOne - valueTwo);
+            ActorEventSource.Current.Message("Result of Subtract operation on {0}, {1} : {2}", new object[] {valueOne, valueTwo, difference.Result});
+            return difference;
         }
     }
 }

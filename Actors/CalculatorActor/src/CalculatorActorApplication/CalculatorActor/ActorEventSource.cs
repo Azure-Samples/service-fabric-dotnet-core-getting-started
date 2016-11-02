@@ -24,6 +24,13 @@ namespace CalculatorActorApp
         // Put [NonEvent] attribute on all methods that do not define an event.
         // For more information see https://msdn.microsoft.com/en-us/library/system.diagnostics.tracing.eventsource.aspx
 
+        [NonEvent]
+        public void Message(string message, params object[] args)
+        {
+            string finalMessage = string.Format(message, args);
+            Message(finalMessage);
+        }
+
         private const int MessageEventId = 1;
         [Event(MessageEventId, Level = EventLevel.Informational, Message = "{0}")]
         public void Message(string message)
