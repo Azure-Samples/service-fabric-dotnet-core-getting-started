@@ -1,6 +1,9 @@
 #!/bin/bash
+
 DIR=`dirname $0`
+
 rm -r $DIR/VisualObjectsApplication
+
 /opt/microsoft/servicefabric/bin/Fabric/Fabric.Code/dotnet/dotnet restore $DIR/src/VisualObjects.Common/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
 /opt/microsoft/servicefabric/bin/Fabric/Fabric.Code/dotnet/dotnet build $DIR/src/VisualObjects.Common/project.json
 
