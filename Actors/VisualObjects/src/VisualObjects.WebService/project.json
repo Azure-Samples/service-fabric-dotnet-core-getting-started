@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0-*",
+  "description": "Stateless Web Service for Visual Objects App",
+  "authors": [ " " ],
+
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "VisualObjects.Common": "1.0.0-*",
+    "Microsoft.AspNetCore.Hosting": "1.0.0",
+    "Microsoft.AspNetCore.Owin": "1.0.0",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
+    "Microsoft.AspNetCore.Diagnostics": "1.0.0",
+    "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "Microsoft.CSharp": "4.0.1",
+    "Microsoft.ServiceFabric.Actors": "0.6.0-preview-01",
+    "System.Collections": "4.0.11",
+    "System.Console": "4.0.0",
+    "System.Linq": "4.1.0",
+    "System.Threading": "4.0.11",
+    "System.Threading.Tasks": "4.0.11",
+    "System.Diagnostics.Tracing": "4.1.0",
+    "System.Fabric": "5.0.1-preview-01",
+    "Microsoft.ServiceFabric.Services": "0.6.0-preview-01",
+    "System.Threading.Thread": "4.0.0",
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+    "Microsoft.AspNetCore.WebSockets.Server": "0.1.0"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  },
+
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "appsettings.json"
+    ]
+  }
+}
