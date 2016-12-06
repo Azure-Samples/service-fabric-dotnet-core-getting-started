@@ -1,6 +1,6 @@
 ---
 services: service-fabric
-platforms: .Net Core
+platforms: dotnet
 author: prachic, raunakp
 ---
 
