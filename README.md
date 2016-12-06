@@ -1,7 +1,7 @@
 ---
 services: service-fabric
 platforms: dotnet
-author: prachic, raunakp
+author: raunakpandya
 ---
 
 # Getting started with Service Fabric with .NET Core
