@@ -10,9 +10,6 @@ check_errs()
 }
 
 DIR=`dirname $0`
-if [ -e $FabricCodePath/dotnet/dotnet ]; then 
-    $FabricCodePath/dotnet/dotnet $DIR/VisualObjects.WebService.dll $@
-else
-    $DIR/../../../../Fabric.Code/dotnet/dotnet $DIR/VisualObjects.WebService.dll $@
+dotnet $DIR/VisualObjects.WebService.dll $@
 fi
 check_errs $?

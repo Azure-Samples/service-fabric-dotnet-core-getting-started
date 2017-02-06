@@ -18,7 +18,7 @@
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.CSharp": "4.0.1",
-    "Microsoft.ServiceFabric.Actors": "0.7.0-*",
+    "Microsoft.ServiceFabric.Actors": "0.8.0-*",
     "System.Collections": "4.0.11",
     "System.Console": "4.0.0",
     "System.Linq": "4.1.0",
@@ -26,7 +26,7 @@
     "System.Threading.Tasks": "4.0.11",
     "System.Diagnostics.Tracing": "4.1.0",
     "System.Fabric": "5.0.1-*",
-    "Microsoft.ServiceFabric.Services": "0.7.0-*",
+    "Microsoft.ServiceFabric.Services": "0.8.0-*",
     "System.Threading.Thread": "4.0.0",
     "Microsoft.NETCore.App": {
       "type": "platform",

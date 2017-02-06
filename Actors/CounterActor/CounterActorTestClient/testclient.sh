@@ -10,5 +10,5 @@ check_errs()
 
 DIR=`dirname $0`
 export LD_LIBRARY_PATH=/opt/microsoft/servicefabric/bin/Fabric/Fabric.Code/
-/opt/microsoft/servicefabric/bin/Fabric/Fabric.Code/dotnet/dotnet $DIR/CounterActorTestClient.dll $@
+dotnet $DIR/CounterActorTestClient.dll $@
 check_errs $?

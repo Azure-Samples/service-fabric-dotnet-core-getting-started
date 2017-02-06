@@ -9,9 +9,6 @@ check_errs()
 }
 
 DIR=`dirname $0`
-if [ -e $FabricCodePath/dotnet/dotnet ]; then 
-    $FabricCodePath/dotnet/dotnet $DIR/CalculatorActor.dll $@
-else
-    $DIR/../../../../Fabric.Code/dotnet/dotnet $DIR/CalculatorActor.dll $@
+dotnet $DIR/CalculatorActor.dll $@
 fi
 check_errs $?
