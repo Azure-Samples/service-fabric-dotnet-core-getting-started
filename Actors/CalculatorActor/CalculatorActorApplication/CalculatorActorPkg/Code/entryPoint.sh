@@ -10,5 +10,4 @@ check_errs()
 
 DIR=`dirname $0`
 dotnet $DIR/CalculatorActor.dll $@
-fi
 check_errs $?

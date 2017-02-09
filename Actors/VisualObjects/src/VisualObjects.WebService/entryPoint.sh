@@ -11,5 +11,4 @@ check_errs()
 
 DIR=`dirname $0`
 dotnet $DIR/VisualObjects.WebService.dll $@
-fi
 check_errs $?

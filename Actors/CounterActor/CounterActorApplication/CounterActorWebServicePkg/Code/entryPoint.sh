@@ -10,5 +10,4 @@ check_errs()
 
 DIR=`dirname $0`
 dotnet $DIR/CounterActorWebService.dll $@
-fi
 check_errs $?
