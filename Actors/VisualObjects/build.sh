@@ -4,10 +4,10 @@ DIR=`dirname $0`
 
 rm -r $DIR/VisualObjectsApplication
 
-dotnet restore $DIR/src/VisualObjects.Common/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages
+dotnet restore $DIR/src/VisualObjects.Common/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
 dotnet build $DIR/src/VisualObjects.Common/project.json
 
-dotnet restore $DIR/src/VisualObjects.ActorService/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages
+dotnet restore $DIR/src/VisualObjects.ActorService/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
 dotnet build $DIR/src/VisualObjects.ActorService/project.json
 dotnet publish $DIR/src/VisualObjects.ActorService/project.json -o $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/Code
 
