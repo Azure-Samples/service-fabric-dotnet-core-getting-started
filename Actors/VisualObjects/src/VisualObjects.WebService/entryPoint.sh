@@ -10,5 +10,6 @@ check_errs()
 }
 
 DIR=`dirname $0`
+echo 0x3f > /proc/self/coredump_filter
 dotnet $DIR/VisualObjects.WebService.dll $@
 check_errs $?
