@@ -40,7 +40,7 @@ namespace VisualObjects.ActorService
             this.jsonString = result.ToJson();
 
             // ACTOR MOVEMENT REFRESH
-            this.updateTimer = this.RegisterTimer(this.MoveObject, null, TimeSpan.FromMilliseconds(30), TimeSpan.FromMilliseconds(30));
+            this.updateTimer = this.RegisterTimer(this.MoveObject, null, TimeSpan.FromMilliseconds(100), TimeSpan.FromMilliseconds(100));
             return;
         }
 

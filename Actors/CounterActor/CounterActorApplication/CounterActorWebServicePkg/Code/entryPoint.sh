@@ -9,9 +9,7 @@ check_errs()
 }
 
 DIR=`dirname $0`
-if [ -e $FabricCodePath/dotnet/dotnet ]; then 
-    $FabricCodePath/dotnet/dotnet $DIR/CounterActorWebService.dll $@
-else
-    $DIR/../../../../Fabric.Code/dotnet/dotnet $DIR/CounterActorWebService.dll $@
-fi
+
+echo 0x3f > /proc/self/coredump_filter
+dotnet $DIR/CounterActorWebService.dll $@
 check_errs $?

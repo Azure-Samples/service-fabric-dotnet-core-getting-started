@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "NETStandard.Library": "1.6.0",
-    "Microsoft.CSharp": "4.0.1",
-    "Microsoft.ServiceFabric.Actors": "0.7.0-*",
-    "System.Collections": "4.0.11",
-    "System.Linq": "4.1.0",
-    "System.Runtime": "4.1.0",
-    "System.Threading": "4.0.11"
+    "Microsoft.CSharp": "4.3.0",
+    "Microsoft.ServiceFabric.Actors": "0.8.0-*",
+    "System.Collections": "4.3.0",
+    "System.Linq": "4.3.0",
+    "System.Runtime": "4.3.0",
+    "System.Threading": "4.3.0"
   }
 }
