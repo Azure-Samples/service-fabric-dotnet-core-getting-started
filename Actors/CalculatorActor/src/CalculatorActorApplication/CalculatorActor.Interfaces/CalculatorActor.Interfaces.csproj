@@ -6,8 +6,8 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>CalculatorActor.Interfaces</AssemblyName>
     <PackageId>CalculatorActor.Interfaces</PackageId>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback)</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>

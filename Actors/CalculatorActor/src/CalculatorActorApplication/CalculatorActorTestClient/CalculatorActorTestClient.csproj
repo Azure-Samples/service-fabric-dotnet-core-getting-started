@@ -7,7 +7,6 @@
     <AssemblyName>CalculatorActorTestClient</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CalculatorActorTestClient</PackageId>
-    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
   </PropertyGroup>
 
