@@ -7,7 +7,7 @@
     <AssemblyName>CalculatorActorTestClient</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CalculatorActorTestClient</PackageId>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <PackageTargetFallback>$(PackageTargetFallback)</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>

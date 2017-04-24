@@ -7,7 +7,6 @@
     <AssemblyName>CounterActorTestClient</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CounterActorTestClient</PackageId>
-    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
   </PropertyGroup>
 
