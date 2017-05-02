@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.3.0" />
-    <PackageReference Include="Microsoft.ServiceFabric.Actors" Version="0.8.0-*" />
+    <PackageReference Include="Microsoft.ServiceFabric.Actors" Version="0.9.0-*" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.Console" Version="4.3.0" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
@@ -24,7 +24,7 @@
     <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
     <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
     <PackageReference Include="System.Fabric" Version="5.0.1-*" />
-    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="0.8.0-*" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="0.9.0-*" />
     <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
   </ItemGroup>
 
