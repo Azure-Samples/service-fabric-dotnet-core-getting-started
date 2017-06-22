@@ -1,19 +1,26 @@
 #!/bin/bash
 
 DIR=`dirname $0`
+CURDIR=`pwd`
 
 rm -r $DIR/VisualObjectsApplication
 
-dotnet restore $DIR/src/VisualObjects.Common/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
-dotnet build $DIR/src/VisualObjects.Common/project.json
+cd `dirname $DIR/src/VisualObjects.Common/VisualObjects.Common.csproj`
+dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet build
+cd -
 
-dotnet restore $DIR/src/VisualObjects.ActorService/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
-dotnet build $DIR/src/VisualObjects.ActorService/project.json
-dotnet publish $DIR/src/VisualObjects.ActorService/project.json -o $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/Code
+cd `dirname $DIR/src/VisualObjects.ActorService/VisualObjects.ActorService.csproj`
+dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet build 
+dotnet publish -o ../../VisualObjectsApplication/VisualObjects.ActorServicePkg/Code
+cd -
 
-dotnet restore $DIR/src/VisualObjects.WebService/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
-dotnet build $DIR/src/VisualObjects.WebService/project.json
-dotnet publish $DIR/src/VisualObjects.WebService/project.json -o $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/Code
+cd `dirname $DIR/src/VisualObjects.WebService/VisualObjects.WebService.csproj`
+dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet build
+dotnet publish -o ../..//VisualObjectsApplication/VisualObjects.WebServicePkg/Code
+cd -
 
 cp $DIR/ApplicationManifest.xml $DIR/VisualObjectsApplication/.
 cp $DIR/src/VisualObjects.ActorService/PackageRoot/ServiceManifest.xml $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/.  

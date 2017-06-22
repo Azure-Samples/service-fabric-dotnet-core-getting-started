@@ -1,14 +1,19 @@
 #!/bin/bash
 DIR=`dirname $0`
 
-dotnet restore $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActor.Interfaces/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
-dotnet build $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActor.Interfaces/project.json
+cd src/CalculatorActorApplication/CalculatorActor.Interfaces/
+dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet build 
+cd -
 
-dotnet restore $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActor/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
-dotnet build $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActor/project.json
-dotnet publish $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActor/project.json -o $DIR/../CalculatorActor/CalculatorActorApplication/CalculatorActorPkg/Code
+cd src/CalculatorActorApplication/CalculatorActor/
+dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet build 
+dotnet publish -o ../../../CalculatorActorApplication/CalculatorActorPkg/Code
+cd -
 
-
-dotnet restore $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActorTestClient/project.json -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
-dotnet build $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActorTestClient/project.json
-dotnet publish $DIR/../CalculatorActor/src/CalculatorActorApplication/CalculatorActorTestClient/project.json -o $DIR/../CalculatorActor/CalculatorActorTestClient
+cd src/CalculatorActorApplication/CalculatorActorTestClient/
+dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet build 
+dotnet publish -o ../../../CalculatorActorTestClient
+cd -
