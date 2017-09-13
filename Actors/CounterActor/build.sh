@@ -1,26 +1,25 @@
 #!/bin/bash
 DIR=`dirname $0`
-CURDIR=`pwd`
 
 cd $DIR/src/CounterActorApplication/CounterActor.Interfaces/
-dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet restore -r ubuntu.16.04-x64 -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
 dotnet build
 cd -
 
 cd $DIR/src/CounterActorApplication/CounterActor/
-dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet restore -r ubuntu.16.04-x64 -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
 dotnet build 
-dotnet publish -o ../../../CounterActorApplication/CounterActorPkg/Code
+dotnet publish --self-contained -r ubuntu.16.04-x64 -o ../../../CounterActorApplication/CounterActorPkg/Code
 cd -
 
 cd $DIR/src/CounterActorApplication/CounterActorTestClient/
-dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet restore -r ubuntu.16.04-x64 -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
 dotnet build 
-dotnet publish -o ../../../CounterActorTestClient
+dotnet publish --self-contained -r ubuntu.16.04-x64 -o ../../../CounterActorTestClient
 cd -
 
 cd $DIR/src/CounterActorApplication/CounterActor.WebService/CounterActorWebService/
-dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet restore -r ubuntu.16.04-x64 -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
 dotnet build 
-dotnet publish -o ../../../../CounterActorApplication/CounterActorWebServicePkg/Code/
+dotnet publish --self-contained -r ubuntu.16.04-x64 -o ../../../../CounterActorApplication/CounterActorWebServicePkg/Code/
 cd -
