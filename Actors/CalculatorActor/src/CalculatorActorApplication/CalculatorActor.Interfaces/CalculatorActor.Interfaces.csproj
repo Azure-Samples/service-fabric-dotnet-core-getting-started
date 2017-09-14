@@ -7,7 +7,6 @@
     <AssemblyName>CalculatorActor.Interfaces</AssemblyName>
     <PackageId>CalculatorActor.Interfaces</PackageId>
     <NetStandardImplicitPackageVersion>2.0.0</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback)</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>

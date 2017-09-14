@@ -7,7 +7,6 @@
     <AssemblyName>CalculatorActorTestClient</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CalculatorActorTestClient</PackageId>
-    <PackageTargetFallback>$(PackageTargetFallback)</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
