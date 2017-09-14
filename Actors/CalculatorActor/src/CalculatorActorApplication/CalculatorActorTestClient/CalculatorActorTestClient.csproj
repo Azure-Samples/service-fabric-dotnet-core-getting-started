@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Calculator Actor Client Console Application</Description>
     <Authors> </Authors>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>CalculatorActorTestClient</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CalculatorActorTestClient</PackageId>
