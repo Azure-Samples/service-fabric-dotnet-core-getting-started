@@ -1,4 +1,8 @@
-﻿$AppPath = "C:\Users\rapatchi\Desktop\VisualObjectsApplication"
+﻿$AppPath = "$PSScriptRoot\VisualObjectsApplication"
+$sdkInstallPath = (Get-ItemProperty 'HKLM:\Software\Microsoft\Service Fabric SDK').FabricSDKInstallPath
+$sfSdkPsModulePath = $sdkInstallPath + "Tools\PSModule\ServiceFabricSDK"
+Import-Module $sfSdkPsModulePath\ServiceFabricSDK.psm1
+
 
 $WebServiceManifestlocation = $AppPath + "\VisualObjects.WebServicePkg\"
 $WebServiceManifestlocationLinux = $WebServiceManifestlocation + "ServiceManifest-Linux.xml"
