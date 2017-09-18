@@ -3,13 +3,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 appPkg="$DIR/CounterActorApplication"
 
-WebServiceManifestlocation="$appPkg/VisualObjects.WebServicePkg"
+WebServiceManifestlocation="$appPkg/CounterActorWebServicePkg"
 WebServiceManifestlocationLinux="$WebServiceManifestlocation/ServiceManifest-Linux.xml"
 WebServiceManifestlocationWindows="$WebServiceManifestlocation/ServiceManifest-Windows.xml"
 WebServiceManifestlocation="$WebServiceManifestlocation/ServiceManifest.xml"
 cp $WebServiceManifestlocationLinux $WebServiceManifestlocation 
 
-ActorServiceManifestlocation="$appPkg/CounterActorWebServicePkg"
+ActorServiceManifestlocation="$appPkg/CounterActorPkg"
 ActorServiceManifestlocationLinux="$ActorServiceManifestlocation/ServiceManifest-Linux.xml"
 ActorServiceManifestlocationWindows="$ActorServiceManifestlocation/ServiceManifest-Windows.xml"
 ActorServiceManifestlocation="$ActorServiceManifestlocation/ServiceManifest.xml"
