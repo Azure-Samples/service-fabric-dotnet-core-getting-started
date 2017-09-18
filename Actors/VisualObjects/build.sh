@@ -23,10 +23,14 @@ dotnet publish -o ../..//VisualObjectsApplication/VisualObjects.WebServicePkg/Co
 cd -
 
 cp $DIR/ApplicationManifest.xml $DIR/VisualObjectsApplication/.
-cp $DIR/src/VisualObjects.ActorService/PackageRoot/ServiceManifest.xml $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/.  
-cp $DIR/src/VisualObjects.WebService/PackageRoot/ServiceManifest.xml $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/.
+cp $DIR/src/VisualObjects.ActorService/PackageRoot/ServiceManifest-Linux.xml $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/. 
+cp $DIR/src/VisualObjects.ActorService/PackageRoot/ServiceManifest-Windows.xml $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/. 
+cp $DIR/src/VisualObjects.WebService/PackageRoot/ServiceManifest-Linux.xml $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/.
+cp $DIR/src/VisualObjects.WebService/PackageRoot/ServiceManifest-Windows.xml $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/.
 cp -r $DIR/src/VisualObjects.WebService/wwwroot $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/Code/.
 cp $DIR/src/VisualObjects.WebService/entryPoint.sh $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/Code/.
 cp $DIR/src/VisualObjects.ActorService/entryPoint.sh $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/Code/.
+cp $DIR/src/VisualObjects.WebService/entryPoint.cmd $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/Code/.
+cp $DIR/src/VisualObjects.ActorService/entryPoint.cmd $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/Code/.
 cp -r $DIR/src/VisualObjects.WebService/PackageRoot/Config $DIR/VisualObjectsApplication/VisualObjects.WebServicePkg/.
 cp -r $DIR/src/VisualObjects.ActorService/PackageRoot/Config $DIR/VisualObjectsApplication/VisualObjects.ActorServicePkg/.
