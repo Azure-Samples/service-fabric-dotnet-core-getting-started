@@ -1,0 +1,2 @@
+Remove-ServiceFabricApplication fabric:/CounterActorApplication 
+Unregister-ServiceFabricApplicationType CounterActorApplicationType 1.0.0

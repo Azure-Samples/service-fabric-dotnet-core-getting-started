@@ -27,7 +27,7 @@ namespace CalculatorActorApp
     internal class ActorEventListener : EventListener
     {
         private string fileName;
-        private const string filepath = "/tmp/";
+        private string filepath = Path.GetTempPath();
 
         public ActorEventListener(string appName)
         {
