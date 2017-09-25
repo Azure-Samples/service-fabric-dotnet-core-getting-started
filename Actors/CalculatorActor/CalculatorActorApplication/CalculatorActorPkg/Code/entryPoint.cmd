@@ -1,3 +1,3 @@
 dotnet %~dp0\CalculatorActor.dll
-echo %errorlevel%
+set %errorlevel%
 exit /b%errorlevel%

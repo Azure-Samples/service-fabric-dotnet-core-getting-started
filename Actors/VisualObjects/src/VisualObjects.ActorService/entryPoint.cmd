@@ -1,3 +1,3 @@
 dotnet %~dp0\VisualObjects.ActorService.dll
-echo %errorlevel%
+set %errorlevel%
 exit /b %errorlevel%

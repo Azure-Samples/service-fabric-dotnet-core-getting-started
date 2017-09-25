@@ -1,3 +1,3 @@
 dotnet %~dp0\VisualObjects.WebService.dll
-echo %errorlevel%
+set %errorlevel%
 exit /b %errorlevel%

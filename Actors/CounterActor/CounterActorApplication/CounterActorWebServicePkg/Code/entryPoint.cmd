@@ -1,3 +1,3 @@
 dotnet %~dp0\CounterActorWebService.dll
-echo %errorlevel%
+set %errorlevel%
 exit /b %errorlevel%
