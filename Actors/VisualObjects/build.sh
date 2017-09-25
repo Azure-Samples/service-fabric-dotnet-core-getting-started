@@ -6,18 +6,18 @@ CURDIR=`pwd`
 rm -r $DIR/VisualObjectsApplication
 
 cd `dirname $DIR/src/VisualObjects.Common/VisualObjects.Common.csproj`
-dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build
 cd -
 
 cd `dirname $DIR/src/VisualObjects.ActorService/VisualObjects.ActorService.csproj`
-dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build 
 dotnet publish -o ../../VisualObjectsApplication/VisualObjects.ActorServicePkg/Code
 cd -
 
 cd `dirname $DIR/src/VisualObjects.WebService/VisualObjects.WebService.csproj`
-dotnet restore -s /opt/microsoft/sdk/servicefabric/csharp/packages -s https://api.nuget.org/v3/index.json
+dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build
 dotnet publish -o ../..//VisualObjectsApplication/VisualObjects.WebServicePkg/Code
 cd -
