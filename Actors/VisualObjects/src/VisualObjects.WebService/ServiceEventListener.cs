@@ -21,7 +21,7 @@ namespace VisualObjects.WebService
     internal class ServiceEventListener : EventListener
     {
         private string fileName;
-        private const string filepath = "/tmp/";
+        private string filepath = Path.GetTempPath();
 
         public ServiceEventListener(string appName)
         {

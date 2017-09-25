@@ -1,4 +1,5 @@
 #!/bin/bash
 
-azure servicefabric application delete fabric:/VisualObjectsApplication
-azure servicefabric application type unregister VisualObjectsApplicationType 1.0.0
+sfctl application delete --application-id VisualObjectsApplication
+sfctl application unprovision --application-type-name VisualObjectsApplicationType --application-type-version 1.0.0
+sfctl store delete --content-path VisualObjectsApplication

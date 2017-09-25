@@ -1,13 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>CounterClient Console Application</Description>
     <Authors> </Authors>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>CounterActorTestClient</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CounterActorTestClient</PackageId>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.3.0" />
-    <PackageReference Include="Microsoft.ServiceFabric.Actors" Version="0.10.0-*" />
+    <PackageReference Include="Microsoft.ServiceFabric.Actors" Version="3.0.211-preview" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.Console" Version="4.3.0" />
     <PackageReference Include="System.Linq" Version="4.3.0" />

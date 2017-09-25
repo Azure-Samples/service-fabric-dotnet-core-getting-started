@@ -1,5 +1,13 @@
 #!/bin/bash
 
-azure servicefabric application package copy CalculatorActorApplication fabric:ImageStore
-azure servicefabric application type register CalculatorActorApplication
-azure servicefabric application create fabric:/CalculatorActorApplication CalculatorActorApplicationType 1.0.0
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+appPkg="$DIR/CalculatorActorApplication"
+ActorServiceManifestlocation="$appPkg/CalculatorActorPkg"
+ActorServiceManifestlocationLinux="$ActorServiceManifestlocation/ServiceManifest-Linux.xml"
+ActorServiceManifestlocationWindows="$ActorServiceManifestlocation/ServiceManifest-Windows.xml"
+ActorServiceManifestlocation="$ActorServiceManifestlocation/ServiceManifest.xml"
+cp $ActorServiceManifestlocationLinux $ActorServiceManifestlocation 
+
+sfctl application upload --path $appPkg --show-progress
+sfctl application provision --application-type-build-path CalculatorActorApplication
+sfctl application create --app-name fabric:/CalculatorActorApplication --app-type CalculatorActorApplicationType --app-version 1.0.0
