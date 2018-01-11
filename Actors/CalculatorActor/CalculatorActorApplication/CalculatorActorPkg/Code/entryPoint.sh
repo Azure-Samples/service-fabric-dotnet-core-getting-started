@@ -10,5 +10,17 @@ check_errs()
 
 DIR=`dirname $0`
 echo 0x3f > /proc/self/coredump_filter
-dotnet $DIR/CalculatorActor.dll $@
+
+. /etc/os-release
+linuxDistrib=$ID
+if [ $linuxDistrib = "rhel" ]; then
+  source scl_source enable rh-dotnet20
+  exitCode=$?
+  if [ $exitCode != 0 ]; then
+        echo "Failed: source scl_source enable rh-dotnet20 : ExitCode: $exitCode"
+        exit $exitCode
+  fi
+fi
+
+exec dotnet $DIR/CalculatorActor.dll "$@"
 check_errs $?

@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------
+// ------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All rights reserved.
 //  Licensed under the MIT License (MIT). See License.txt in the repo root for license information.
 // ------------------------------------------------------------
@@ -46,7 +46,6 @@ namespace CounterActorApp
                     : this.appRoot.TrimEnd('/') + '/');
 
             this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-
             ServiceEventSource.Current.Message("Starting web server on {0}", this.listeningAddress);
 
             try
@@ -58,10 +57,12 @@ namespace CounterActorApp
                .Build();
 
                 this.webHost.Start();
+                Console.WriteLine("Started WebServer");
             }
             catch (Exception ex)
             {
                 ServiceEventSource.Current.ServiceWebHostBuilderFailed(ex);
+                Console.WriteLine("Failed to Start WebServer");
             }
 
             return Task.FromResult(this.publishAddress);

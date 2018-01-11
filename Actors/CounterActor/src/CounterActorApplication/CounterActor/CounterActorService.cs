@@ -40,24 +40,27 @@ namespace CounterActorApp
             // Data stored in the StateManager will be replicated for high-availability for actors that use volatile or persisted state storage.
             // Any serializable object can be saved in the StateManager.
             // For more information, see http://aka.ms/servicefabricactorsstateserialization
-
+            Console.WriteLine("Activated Actor");
             return this.StateManager.TryAddStateAsync("count", 0);
         }
 
         private Task AsyncCallback(object o)
         {
+            Console.WriteLine("Incrementing Count");
             int count = this.StateManager.GetStateAsync<int>("count").Result + 1;
             return this.StateManager.AddOrUpdateStateAsync("count", count, (key, value) => count > value ? count : value);
         }
 
         Task<int> ICounterActor.GetCountAsync()
         {
+            Console.WriteLine("Getting Count");
             ActorEventSource.Current.Message("Count is {0}", this.StateManager.GetStateAsync<int>("count").Result);
             return this.StateManager.GetStateAsync<int>("count");
         }
 
         Task ICounterActor.SetCountAsync(int count)
         {
+            Console.WriteLine("Setting Count");
             // Requests are not guaranteed to be processed in order nor at most once.
             // The update function here verifies that the incoming count is greater than the current count to preserve order.
             return this.StateManager.AddOrUpdateStateAsync("count", count, (key, value) => count > value ? count : value);
