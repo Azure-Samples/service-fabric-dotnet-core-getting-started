@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 check_errs()
 {
   # Function. Parameter 1 is the return code
@@ -9,7 +10,7 @@ check_errs()
 }
 
 DIR=`dirname $0`
-
+echo 0x3f > /proc/self/coredump_filter
 . /etc/os-release
 linuxDistrib=$ID
 if [ $linuxDistrib = "rhel" ]; then
@@ -20,6 +21,5 @@ if [ $linuxDistrib = "rhel" ]; then
         exit $exitCode
   fi
 fi
-
-exec dotnet $DIR/CounterService.dll "$@"
+exec dotnet $DIR/VisualObjects.ActorService.dll "$@"
 check_errs $?

@@ -28,7 +28,7 @@
       <!-- This endpoint is used by the communication listener to obtain the port on which to 
            listen. Please note that if your service is partitioned, this port is shared with 
            replicas of different partitions that are placed in your code. -->
-      <Endpoint Name="WebEndpoint" Protocol="http" Port="31001" />
+      <Endpoint Name="WebEndpoint" Protocol="http" Port="31002" />
     </Endpoints>
   </Resources>
 </ServiceManifest>

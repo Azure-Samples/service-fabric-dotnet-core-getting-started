@@ -9,6 +9,7 @@ check_errs()
 }
 
 DIR=`dirname $0`
+echo 0x3f > /proc/self/coredump_filter
 
 . /etc/os-release
 linuxDistrib=$ID
@@ -20,6 +21,5 @@ if [ $linuxDistrib = "rhel" ]; then
         exit $exitCode
   fi
 fi
-
-exec dotnet $DIR/CounterService.dll "$@"
+exec dotnet $DIR/CounterActor.dll "$@"
 check_errs $?
