@@ -23,7 +23,6 @@ namespace CounterActorApp
             // Create Service Fabric runtime and register the service type.
             try
             {
-                Console.WriteLine("Starting");
                 //Creating a new event listener to redirect the traces to a file
                 ServiceEventListener listener = new ServiceEventListener("CounterActorWebService");
                 listener.EnableEvents(ServiceEventSource.Current, EventLevel.LogAlways, EventKeywords.All);
@@ -33,7 +32,6 @@ namespace CounterActorApp
                 // When Service Fabric creates an instance of this service type,
                 // an instance of the class is created in this host process.
                 ServiceRuntime.RegisterServiceAsync("CounterActorWebServiceType", context => new CounterActorWebService (context)).GetAwaiter().GetResult();
-                Console.WriteLine("Registered WebService");
 
                 // Prevents this host process from terminating so services keep running.
                 Thread.Sleep(Timeout.Infinite);

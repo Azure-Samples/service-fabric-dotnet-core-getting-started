@@ -57,12 +57,10 @@ namespace CounterActorApp
                .Build();
 
                 this.webHost.Start();
-                Console.WriteLine("Started WebServer");
             }
             catch (Exception ex)
             {
                 ServiceEventSource.Current.ServiceWebHostBuilderFailed(ex);
-                Console.WriteLine("Failed to Start WebServer");
             }
 
             return Task.FromResult(this.publishAddress);

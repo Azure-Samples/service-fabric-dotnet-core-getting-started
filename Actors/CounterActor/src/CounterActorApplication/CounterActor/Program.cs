@@ -27,7 +27,6 @@ namespace CounterActorApp
                 // This line registers an Actor Service to host your actor class with the Service Fabric runtime.
                 ActorRuntime.RegisterActorAsync<CounterActorService>(
                    (context, actorType) => new ActorService(context, actorType)).GetAwaiter().GetResult();
-                Console.WriteLine("Registered Actor");
                 Thread.Sleep(Timeout.Infinite);
             }
             catch (Exception ex)
