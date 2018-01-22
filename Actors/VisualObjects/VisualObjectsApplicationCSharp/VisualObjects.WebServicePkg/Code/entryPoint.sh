@@ -22,5 +22,5 @@ if [ $linuxDistrib = "rhel" ]; then
         exit $exitCode
   fi
 fi
-exec dotnet $DIR/VisualObjects.WebService.dll "$@"
+dotnet $DIR/VisualObjects.WebService.dll $@
 check_errs $?

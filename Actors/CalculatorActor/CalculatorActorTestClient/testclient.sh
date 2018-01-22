@@ -22,5 +22,5 @@ if [ $linuxDistrib = "rhel" ]; then
   fi
 fi
 
-exec dotnet $DIR/CalculatorActorTestClient.dll "$@"
+dotnet $DIR/CalculatorActorTestClient.dll $@
 check_errs $?
