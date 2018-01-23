@@ -21,5 +21,5 @@ if [ $linuxDistrib = "rhel" ]; then
   fi
 fi
 
-exec dotnet $DIR/CounterService.dll "$@"
+dotnet $DIR/CounterService.dll $@
 check_errs $?

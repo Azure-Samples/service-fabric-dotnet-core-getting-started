@@ -22,5 +22,5 @@ if [ $linuxDistrib = "rhel" ]; then
   fi
 fi
 
-exec dotnet $DIR/CounterActorTestClient.dll "$@"
+dotnet $DIR/CounterActorTestClient.dll $@
 check_errs $?

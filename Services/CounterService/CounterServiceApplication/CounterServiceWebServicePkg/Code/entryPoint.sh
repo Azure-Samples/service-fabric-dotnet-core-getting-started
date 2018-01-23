@@ -22,5 +22,5 @@ if [ $linuxDistrib = "rhel" ]; then
         exit $exitCode
   fi
 fi
-exec dotnet $DIR/CounterServiceWebService.dll "$@"
+dotnet $DIR/CounterServiceWebService.dll $@
 check_errs $?
