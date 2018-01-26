@@ -11,16 +11,7 @@ check_errs()
 DIR=`dirname $0`
 export LD_LIBRARY_PATH=/opt/microsoft/servicefabric/bin/Fabric/Fabric.Code/
 
-. /etc/os-release
-linuxDistrib=$ID
-if [ $linuxDistrib = "rhel" ]; then
-  source scl_source enable rh-dotnet20
-  exitCode=$?
-  if [ $exitCode != 0 ]; then
-        echo "Failed: source scl_source enable rh-dotnet20 : ExitCode: $exitCode"
-        exit $exitCode
-  fi
-fi
+source ../dotnet-include.sh 
 
 dotnet $DIR/CounterActorTestClient.dll $@
 check_errs $?
