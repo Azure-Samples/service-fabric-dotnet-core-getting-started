@@ -1,3 +1,3 @@
-Remove-ServiceFabricApplication fabric:/CounterActorApplication 
-Unregister-ServiceFabricApplicationType CounterActorApplicationType 1.0.0
- Remove-ServiceFabricApplicationPackage CounterActorApplication
+Remove-ServiceFabricApplication fabric:/CounterActorApplicationCSharp
+Unregister-ServiceFabricApplicationType CounterActorApplicationTypeCSharp 1.0.0
+ Remove-ServiceFabricApplicationPackage CounterActorApplicationCSharp

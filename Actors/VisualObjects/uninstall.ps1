@@ -1,3 +1,3 @@
-﻿Remove-ServiceFabricApplication fabric:/VisualObjectsApplication
-Unregister-ServiceFabricApplicationType VisualObjectsApplicationType 1.0.0
-Remove-ServiceFabricApplicationPackage VisualObjectsApplication
+Remove-ServiceFabricApplication fabric:/VisualObjectsApplicationCSharp
+Unregister-ServiceFabricApplicationType VisualObjectsApplicationTypeCSharp 1.0.0
+Remove-ServiceFabricApplicationPackage VisualObjectsApplicationCSharp

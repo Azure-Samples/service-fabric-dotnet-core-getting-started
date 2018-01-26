@@ -1,4 +1,4 @@
-﻿$AppPath = "$PSScriptRoot\VisualObjectsApplication"
+$AppPath = "$PSScriptRoot\VisualObjectsApplicationCSharp"
 $sdkInstallPath = (Get-ItemProperty 'HKLM:\Software\Microsoft\Service Fabric SDK').FabricSDKInstallPath
 $sfSdkPsModulePath = $sdkInstallPath + "Tools\PSModule\ServiceFabricSDK"
 Import-Module $sfSdkPsModulePath\ServiceFabricSDK.psm1
@@ -19,6 +19,6 @@ Copy-Item -Path $ActorServiceManifestlocationWindows -Destination $ActorServiceM
 
 
 
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $AppPath -ApplicationPackagePathInImageStore VisualObjectsApplicationType -ImageStoreConnectionString (Get-ImageStoreConnectionStringFromClusterManifest(Get-ServiceFabricClusterManifest)) -TimeoutSec 1800
-Register-ServiceFabricApplicationType VisualObjectsApplicationType
-New-ServiceFabricApplication fabric:/VisualObjectsApplication VisualObjectsApplicationType 1.0.0
+Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $AppPath -ApplicationPackagePathInImageStore VisualObjectsApplicationTypeCSharp -ImageStoreConnectionString (Get-ImageStoreConnectionStringFromClusterManifest(Get-ServiceFabricClusterManifest)) -TimeoutSec 1800
+Register-ServiceFabricApplicationType VisualObjectsApplicationTypeCSharp
+New-ServiceFabricApplication fabric:/VisualObjectsApplicationCSharp VisualObjectsApplicationTypeCSharp 1.0.0
