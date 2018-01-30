@@ -12,6 +12,6 @@ DIR=`dirname $0`
 
 echo 0x3f > /proc/self/coredump_filter
 
-source ../../../dotnet-include.sh 
+source $DIR/dotnet-include.sh 
 dotnet $DIR/CounterServiceWebService.dll $@
 check_errs $?

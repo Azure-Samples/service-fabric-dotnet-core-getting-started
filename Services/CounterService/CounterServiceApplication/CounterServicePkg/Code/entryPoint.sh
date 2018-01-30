@@ -9,7 +9,7 @@ check_errs()
 }
 
 DIR=`dirname $0`
-source ../../../dotnet-include.sh 
+source $DIR/dotnet-include.sh 
 
 dotnet $DIR/CounterService.dll $@
 check_errs $?

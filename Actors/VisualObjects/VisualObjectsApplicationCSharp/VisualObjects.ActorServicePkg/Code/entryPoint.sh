@@ -11,6 +11,7 @@ check_errs()
 
 DIR=`dirname $0`
 echo 0x3f > /proc/self/coredump_filter
-source ../../../dotnet-include.sh 
-dotnet $DIR/VisualObjects.ActorService.dll $@
+
+source $DIR/dotnet-include.sh
+exec dotnet $DIR/VisualObjects.ActorService.dll "$@"
 check_errs $?

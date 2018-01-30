@@ -2,7 +2,7 @@
 
 DIR=`dirname $0`
 CURDIR=`pwd`
-source ./dotnet-include.sh 
+source $DIR/dotnet-include.sh 
 rm -r $DIR/VisualObjectsApplicationCSharp
 
 cd `dirname $DIR/src/VisualObjects.Common/VisualObjects.Common.csproj`
