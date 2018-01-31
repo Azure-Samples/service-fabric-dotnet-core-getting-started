@@ -14,7 +14,8 @@ ActorServiceManifestlocationLinux="$ActorServiceManifestlocation/ServiceManifest
 ActorServiceManifestlocationWindows="$ActorServiceManifestlocation/ServiceManifest-Windows.xml"
 ActorServiceManifestlocation="$ActorServiceManifestlocation/ServiceManifest.xml"
 cp $ActorServiceManifestlocationLinux $ActorServiceManifestlocation
-
+cp dotnet-include.sh ./VisualObjectsApplicationCSharp/VisualObjects.ActorServicePkg/Code
+cp dotnet-include.sh ./VisualObjectsApplicationCSharp/VisualObjects.WebServicePkg/Code
 sfctl application upload --path $appPkg --show-progress
 sfctl application provision --application-type-build-path VisualObjectsApplicationCSharp
 sfctl application create --app-name fabric:/VisualObjectsApplicationCSharp --app-type VisualObjectsApplicationTypeCSharp --app-version 1.0.0

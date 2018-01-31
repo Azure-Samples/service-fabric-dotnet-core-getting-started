@@ -15,6 +15,9 @@ ActorServiceManifestlocationWindows="$ActorServiceManifestlocation/ServiceManife
 ActorServiceManifestlocation="$ActorServiceManifestlocation/ServiceManifest.xml"
 cp $ActorServiceManifestlocationLinux $ActorServiceManifestlocation 
 
+cp dotnet-include.sh ./CounterActorApplicationCSharp/CounterActorPkg/Code
+cp dotnet-include.sh ./CounterActorApplicationCSharp/CounterActorWebServicePkg/Code
+cp dotnet-include.sh ./CounterActorTestClient
 sfctl application upload --path $appPkg --show-progress
 sfctl application provision --application-type-build-path CounterActorApplicationCSharp
 sfctl application create --app-name fabric:/CounterActorApplicationCSharp --app-type CounterActorApplicationTypeCSharp --app-version 1.0.0

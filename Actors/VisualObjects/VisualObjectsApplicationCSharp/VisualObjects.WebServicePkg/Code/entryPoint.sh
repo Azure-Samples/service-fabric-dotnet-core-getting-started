@@ -11,7 +11,6 @@ check_errs()
 
 DIR=`dirname $0`
 echo 0x3f > /proc/self/coredump_filter
-
 . /etc/os-release
 linuxDistrib=$ID
 if [ $linuxDistrib = "rhel" ]; then

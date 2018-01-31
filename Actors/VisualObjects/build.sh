@@ -2,16 +2,7 @@
 
 DIR=`dirname $0`
 CURDIR=`pwd`
-. /etc/os-release
-linuxDistrib=$ID
-if [ $linuxDistrib = "rhel" ]; then
-  source scl_source enable rh-dotnet20
-  exitCode=$?
-  if [ $exitCode != 0 ]; then
-        echo "Failed: source scl_source enable rh-dotnet20 : ExitCode: $exitCode"
-        exit $exitCode
-  fi
-fi
+source $DIR/dotnet-include.sh 
 rm -r $DIR/VisualObjectsApplicationCSharp
 
 cd `dirname $DIR/src/VisualObjects.Common/VisualObjects.Common.csproj`
