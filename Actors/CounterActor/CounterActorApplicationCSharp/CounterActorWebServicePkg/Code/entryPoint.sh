@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 check_errs()
 {
   # Function. Parameter 1 is the return code
@@ -10,6 +9,9 @@ check_errs()
 }
 
 DIR=`dirname $0`
+
 echo 0x3f > /proc/self/coredump_filter
-dotnet $DIR/VisualObjects.ActorService.dll $@
+
+source $DIR/dotnet-include.sh 
+dotnet $DIR/CounterActorWebService.dll $@
 check_errs $?

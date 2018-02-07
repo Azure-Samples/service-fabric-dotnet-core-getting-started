@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Calculator Actor Client Console Application</Description>
@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.3.0" />
-    <PackageReference Include="Microsoft.ServiceFabric.Actors" Version="3.0.211-preview" />
+    <PackageReference Include="Microsoft.ServiceFabric.Actors" Version="3.0.456" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.Console" Version="4.3.0" />
     <PackageReference Include="System.Linq" Version="4.3.0" />

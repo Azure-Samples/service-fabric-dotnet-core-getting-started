@@ -13,6 +13,7 @@ namespace CounterActorApp
     using System.Globalization;
     using System.IO;
     using System.Text;
+    using System;
     using System.Threading.Tasks;
     using Microsoft.ServiceFabric.Actors;
     using Microsoft.ServiceFabric.Actors.Client;
@@ -56,11 +57,10 @@ namespace CounterActorApp
         
         public Task Invoke(IDictionary<string, object> environment)
         {
-            var counterActorProxy = ActorProxy.Create<ICounterActor>(new ActorId(0x100), "fabric:/CounterActorApplication" , "CounterActor");
+            var counterActorProxy = ActorProxy.Create<ICounterActor>(new ActorId(0x100), "fabric:/CounterActorApplicationCSharp" , "CounterActor");
             int result = counterActorProxy.GetCountAsync().Result;
             string responseText = "The value of counter is : " + result;
             byte[] responseBytes = Encoding.UTF8.GetBytes(responseText);
-
             // See http://owin.org/spec/owin-1.0.0.html for standard environment keys.
             var responseStream = (Stream)environment["owin.ResponseBody"];
             var responseHeaders = (IDictionary<string, string[]>)environment["owin.ResponseHeaders"];

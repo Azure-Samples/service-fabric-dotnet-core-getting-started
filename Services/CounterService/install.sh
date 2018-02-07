@@ -15,7 +15,8 @@ StatefulServiceManifestlocationLinux="$StatefulServiceManifestlocation/ServiceMa
 StatefulServiceManifestlocationWindows="$StatefulServiceManifestlocation/ServiceManifest-Windows.xml"
 StatefulServiceManifestlocation="$StatefulServiceManifestlocation/ServiceManifest.xml"
 cp $StatefulServiceManifestlocationLinux $StatefulServiceManifestlocation
-
+cp dotnet-include.sh ./CounterServiceApplication/CounterServicePkg/Code
+cp dotnet-include.sh ./CounterServiceApplication/CounterServiceWebServicePkg/Code
 sfctl application upload --path CounterServiceApplication --show-progress
 sfctl application provision --application-type-build-path CounterServiceApplication
 sfctl application create --app-name fabric:/CounterServiceApplication --app-type CounterServiceApplicationType --app-version 1.0.0

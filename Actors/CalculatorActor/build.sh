@@ -1,6 +1,7 @@
 #!/bin/bash
 DIR=`dirname $0`
 
+source $DIR/dotnet-include.sh 
 cd src/CalculatorActorApplication/CalculatorActor.Interfaces/
 dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build 

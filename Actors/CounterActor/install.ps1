@@ -1,4 +1,4 @@
-$AppPath = "$PSScriptRoot\CounterActorApplication"
+$AppPath = "$PSScriptRoot\CounterActorApplicationCSharp"
 $sdkInstallPath = (Get-ItemProperty 'HKLM:\Software\Microsoft\Service Fabric SDK').FabricSDKInstallPath
 $sfSdkPsModulePath = $sdkInstallPath + "Tools\PSModule\ServiceFabricSDK"
 Import-Module $sfSdkPsModulePath\ServiceFabricSDK.psm1
@@ -15,6 +15,6 @@ $ActorServiceManifestlocationWindows = $ActorServiceManifestlocation + "\Service
 $ActorServiceManifestlocationFinal= $ActorServiceManifestlocation + "ServiceManifest.xml"
 Copy-Item -Path $ActorServiceManifestlocationWindows -Destination $ActorServiceManifestlocationFinal -Force
 
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $AppPath -ApplicationPackagePathInImageStore CounterActorApplicationType -ImageStoreConnectionString (Get-ImageStoreConnectionStringFromClusterManifest(Get-ServiceFabricClusterManifest)) -TimeoutSec 1800
-Register-ServiceFabricApplicationType CounterActorApplicationType
-New-ServiceFabricApplication fabric:/CounterActorApplication CounterActorApplicationType 1.0.0
+Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $AppPath -ApplicationPackagePathInImageStore CounterActorApplicationTypeCSharp -ImageStoreConnectionString (Get-ImageStoreConnectionStringFromClusterManifest(Get-ServiceFabricClusterManifest)) -TimeoutSec 1800
+Register-ServiceFabricApplicationType CounterActorApplicationTypeCSharp
+New-ServiceFabricApplication fabric:/CounterActorApplicationCSharp CounterActorApplicationTypeCSharp 1.0.0

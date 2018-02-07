@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR=`dirname $0`
-
+source $DIR/dotnet-include.sh 
 cd $DIR/src/CounterServiceApplication/CounterService.Interfaces/
 dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build

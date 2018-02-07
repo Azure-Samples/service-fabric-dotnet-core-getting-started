@@ -40,7 +40,6 @@ namespace CounterActorApp
             // Data stored in the StateManager will be replicated for high-availability for actors that use volatile or persisted state storage.
             // Any serializable object can be saved in the StateManager.
             // For more information, see http://aka.ms/servicefabricactorsstateserialization
-
             return this.StateManager.TryAddStateAsync("count", 0);
         }
 
