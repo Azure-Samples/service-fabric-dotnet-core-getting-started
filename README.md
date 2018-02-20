@@ -13,14 +13,14 @@ This repository contains a set of simple sample projects to help you getting sta
 The samples are divided by the category and [Service Fabric programming model][service-fabric-programming-models] that they focus on: Reliable Actors, Reliable Services. Most real applications will include a mixture of the concepts and programming models.
 
 ### Folder Hierarchy
-src/ - Source of the application divided by different modules by sub-folders.  
-&lt;Application Folder&gt;/ - Service Fabric Application folder heirarchy. After compilation the executables are places in code   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subfolders.  
-build.sh - Script to build source on Linux shell.  
-build.ps1 - PowerShell script to build source on Windows.  
-install.sh - Script to install Application from Linux shell.  
-install.ps1 - PowerShell script to install application from Windows.  
-uninstall.sh - Script to uninstall application from Linux shell.  
-uninstall.ps1 - PowerShell script to unintall application from Windows.
+* src/ - Source of the application divided by different modules by sub-folders.  
+* &lt;application package folder&gt;/ - Service Fabric Application folder heirarchy. After compilation the executables are placed in code subfolders.  
+* build.sh - Script to build source on Linux shell.  
+* build.ps1 - PowerShell script to build source on Windows.  
+* install.sh - Script to install Application from Linux shell.  
+* install.ps1 - PowerShell script to install application from Windows.  
+* uninstall.sh - Script to uninstall application from Linux shell.  
+* uninstall.ps1 - PowerShell script to unintall application from Windows.
 
 ## Reliable Actor samples
 ### CounterActor
