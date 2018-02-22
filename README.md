@@ -27,7 +27,7 @@ The samples are divided by the category and [Service Fabric programming model][s
 ### CounterActor
 
 Counter Actor provides an example of a very simple actor which implements a counter. Once the service is deployed you can run the testclient to see the output of the counter on console. 
-The application includes a OWIN self hosting based web service, modeled as Service Fabric reliable stateless service, accessible at http://&lt;clusteraddress&gt;:20003. where you can see the effect of counter incrementing on the web UI.
+The application includes a OWIN self hosting based web service, modeled as Service Fabric reliable stateless service, accessible at http://&lt;clusteraddress&gt;:31001. where you can see the effect of counter incrementing on the web UI.
 
 ### CalculatorActor
 
