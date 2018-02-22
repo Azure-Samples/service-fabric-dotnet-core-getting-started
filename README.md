@@ -21,6 +21,7 @@ The samples are divided by the category and [Service Fabric programming model][s
 * install.ps1 - PowerShell script to install application from Windows.  
 * uninstall.sh - Script to uninstall application from Linux shell.  
 * uninstall.ps1 - PowerShell script to unintall application from Windows.
+* dotnet-include.sh - Script to conditionally handle RHEL dotnet cli through scl(software collections)
 
 ## Reliable Actor samples
 ### CounterActor
