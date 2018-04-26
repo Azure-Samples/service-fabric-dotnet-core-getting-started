@@ -19,4 +19,16 @@ cp dotnet-include.sh ./CounterServiceApplication/CounterServicePkg/Code
 cp dotnet-include.sh ./CounterServiceApplication/CounterServiceWebServicePkg/Code
 sfctl application upload --path CounterServiceApplication --show-progress
 sfctl application provision --application-type-build-path CounterServiceApplication
-sfctl application create --app-name fabric:/CounterServiceApplication --app-type CounterServiceApplicationType --app-version 1.0.0
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied, proceed with default instanceCount of 1"
+    sfctl application create --app-name fabric:/CounterServiceApplication --app-type CounterServiceApplicationType --app-version 1.0.0 --parameters "{\"CounterServiceWebService_InstanceCount\":\"1\"}"
+  elif [ $1 = 0 ]
+  then
+    echo "Onebox environment, proceed with default instanceCount of 1."
+    sfctl application create --app-name fabric:/CounterServiceApplication --app-type CounterServiceApplicationType --app-version 1.0.0 --parameters "{\"CounterServiceWebService_InstanceCount\":\"1\"}"
+  elif [ $1 = 1 ]
+  then
+    echo "Multinode env, proceed with default instanceCount of -1"
+    sfctl application create --app-name fabric:/CounterServiceApplication --app-type CounterServiceApplicationType --app-version 1.0.0
+fi

@@ -18,4 +18,16 @@ cp dotnet-include.sh ./VisualObjectsApplicationCSharp/VisualObjects.ActorService
 cp dotnet-include.sh ./VisualObjectsApplicationCSharp/VisualObjects.WebServicePkg/Code
 sfctl application upload --path $appPkg --show-progress
 sfctl application provision --application-type-build-path VisualObjectsApplicationCSharp
-sfctl application create --app-name fabric:/VisualObjectsApplicationCSharp --app-type VisualObjectsApplicationTypeCSharp --app-version 1.0.0
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied, proceed with default instanceCount of 1"
+    sfctl application create --app-name fabric:/VisualObjectsApplicationCSharp --app-type VisualObjectsApplicationTypeCSharp --app-version 1.0.0 --parameters "{\"VisualObjects.WebService_InstanceCount\":\"1\"}"
+  elif [ $1 = 0 ]
+  then
+    echo "Onebox environment, proceed with default instanceCount of 1."
+    sfctl application create --app-name fabric:/VisualObjectsApplicationCSharp --app-type VisualObjectsApplicationTypeCSharp --app-version 1.0.0 --parameters "{\"VisualObjects.WebService_InstanceCount\":\"1\"}"
+  elif [ $1 = 1 ]
+  then
+    echo "Multinode env, proceed with default instanceCount of -1"
+    sfctl application create --app-name fabric:/VisualObjectsApplicationCSharp --app-type VisualObjectsApplicationTypeCSharp --app-version 1.0.0
+fi
