@@ -1,5 +1,12 @@
 #!/bin/bash
-
+create_app()
+{
+  if [ $# -eq 0 ]; then
+    sfctl application create --app-name fabric:/CounterActorApplicationCSharp --app-type CounterActorApplicationTypeCSharp --app-version 1.0.0 --parameters "{\"CounterActorWebService_InstanceCount\":\"1\"}"
+  else
+    sfctl application create --app-name fabric:/CounterActorApplicationCSharp --app-type CounterActorApplicationTypeCSharp --app-version 1.0.0
+  fi
+}
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 appPkg="$DIR/CounterActorApplicationCSharp"
 
@@ -23,13 +30,13 @@ sfctl application provision --application-type-build-path CounterActorApplicatio
 if [ $# -eq 0 ]
   then
     echo "No arguments supplied, proceed with default instanceCount of 1"
-    sfctl application create --app-name fabric:/CounterActorApplicationCSharp --app-type CounterActorApplicationTypeCSharp --app-version 1.0.0 --parameters "{\"CounterActorWebService_InstanceCount\":\"1\"}"
-  elif [ $1 = 0 ]
+    create_app
+  elif [ $1 = "onebox" ]
   then
     echo "Onebox environment, proceed with default instanceCount of 1."
-    sfctl application create --app-name fabric:/CounterActorApplicationCSharp --app-type CounterActorApplicationTypeCSharp --app-version 1.0.0 --parameters "{\"CounterActorWebService_InstanceCount\":\"1\"}"
-  elif [ $1 = 1 ]
+    create_app
+  elif [ $1 = "multinode" ]
   then
     echo "Multinode env, proceed with default instanceCount of -1"
-    sfctl application create --app-name fabric:/CounterActorApplicationCSharp --app-type CounterActorApplicationTypeCSharp --app-version 1.0.0
+    create_app 1
 fi
