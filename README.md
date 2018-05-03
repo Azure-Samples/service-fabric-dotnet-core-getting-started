@@ -17,7 +17,7 @@ The samples are divided by the category and [Service Fabric programming model][s
 * &lt;application package folder&gt;/ - Service Fabric Application folder heirarchy. After compilation the executables are placed in code subfolders.  
 * build.sh - Script to build source on Linux shell.  
 * build.ps1 - PowerShell script to build source on Windows.  
-* install.sh - Script to install Application from Linux shell.  
+* install.sh - Script to install Application from Linux shell. Run ./install.sh --help for more information
 * install.ps1 - PowerShell script to install application from Windows.  
 * uninstall.sh - Script to uninstall application from Linux shell.  
 * uninstall.ps1 - PowerShell script to unintall application from Windows.

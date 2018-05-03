@@ -38,13 +38,13 @@ sfctl application provision --application-type-build-path CounterServiceApplicat
 if [ $# -eq 0 ]
   then
     echo "No arguments supplied, proceed with default instanceCount of 1"
-    create_app {}
+    create_app "{\"CounterServiceWebService_InstanceCount\":\"1\"}"
   elif [ $1 = "-onebox" ]
   then
     echo "Onebox environment, proceed with default instanceCount of 1."
-    create_app {}
+    create_app "{\"CounterServiceWebService_InstanceCount\":\"1\"}"
   elif [ $1 = "-multinode" ]
   then
     echo "Multinode env, proceed with default instanceCount of -1"
-    create_app "{\"CounterServiceWebService_InstanceCount\":\"1\"}"
+    create_app {}
 fi
