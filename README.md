@@ -4,6 +4,7 @@ languages:
 products:
 - azure
 topic: sample
+description: "This repository contains a set sample projects to help you get started with Service Fabric on Linux with .NET Core as the framework."
 ---
 
 # Getting started with Service Fabric with .NET Core
