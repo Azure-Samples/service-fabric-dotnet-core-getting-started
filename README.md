@@ -1,7 +1,9 @@
 ---
-services: service-fabric
-platforms: dotnet
-author: raunakpandya
+languages:
+- csharp
+products:
+- azure
+topic: sample
 ---
 
 # Getting started with Service Fabric with .NET Core
