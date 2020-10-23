@@ -31,7 +31,7 @@ ActorServiceManifestlocation="$ActorServiceManifestlocation/ServiceManifest.xml"
 cp $ActorServiceManifestlocationLinux $ActorServiceManifestlocation
 cp dotnet-include.sh ./VisualObjectsApplicationCSharp/VisualObjects.ActorServicePkg/Code
 cp dotnet-include.sh ./VisualObjectsApplicationCSharp/VisualObjects.WebServicePkg/Code
-sfctl application upload --path $appPkg --show-progress
+sfctl application upload --path $appPkg --show-progress -t 1200
 sfctl application provision --application-type-build-path VisualObjectsApplicationCSharp
 if [ $# -eq 0 ]
   then

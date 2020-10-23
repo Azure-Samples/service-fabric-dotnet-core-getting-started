@@ -34,7 +34,7 @@ cp $ActorServiceManifestlocationLinux $ActorServiceManifestlocation
 cp dotnet-include.sh ./CounterActorApplicationCSharp/CounterActorPkg/Code
 cp dotnet-include.sh ./CounterActorApplicationCSharp/CounterActorWebServicePkg/Code
 cp dotnet-include.sh ./CounterActorTestClient
-sfctl application upload --path $appPkg --show-progress
+sfctl application upload --path $appPkg --show-progress -t 1200
 sfctl application provision --application-type-build-path CounterActorApplicationCSharp 
 if [ $# -eq 0 ]
   then

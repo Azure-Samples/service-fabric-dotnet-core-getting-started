@@ -33,7 +33,7 @@ StatefulServiceManifestlocation="$StatefulServiceManifestlocation/ServiceManifes
 cp $StatefulServiceManifestlocationLinux $StatefulServiceManifestlocation
 cp dotnet-include.sh ./CounterServiceApplication/CounterServicePkg/Code
 cp dotnet-include.sh ./CounterServiceApplication/CounterServiceWebServicePkg/Code
-sfctl application upload --path CounterServiceApplication --show-progress
+sfctl application upload --path CounterServiceApplication --show-progress -t 1200
 sfctl application provision --application-type-build-path CounterServiceApplication
 if [ $# -eq 0 ]
   then
