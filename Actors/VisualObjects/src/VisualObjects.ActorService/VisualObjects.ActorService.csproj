@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Visual objects actor service</Description>
     <Authors> </Authors>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>VisualObjects.ActorService</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>VisualObjects.ActorService</PackageId>
