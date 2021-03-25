@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Stateless Web Service for Stateful CounterActor App</Description>
     <Authors> </Authors>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>CounterActorWebService</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CounterActorWebService</PackageId>
