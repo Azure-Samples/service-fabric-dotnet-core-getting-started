@@ -9,12 +9,12 @@ cd -
 cd $DIR/src/CounterServiceApplication/CounterService/
 dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build 
-dotnet publish -o ../../../CounterServiceApplication/CounterServicePkg/Code
+dotnet publish -c Release --self-contained --runtime linux-x64 -o ../../../CounterServiceApplication/CounterServicePkg/Code
 cd -
 
 
 cd $DIR/src/CounterServiceApplication/CounterService.WebService/CounterServiceWebService/
 dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build 
-dotnet publish -o ../../../../CounterServiceApplication/CounterServiceWebServicePkg/Code/
+dotnet publish -c Release --self-contained --runtime linux-x64 -o ../../../../CounterServiceApplication/CounterServiceWebServicePkg/Code/
 cd -
