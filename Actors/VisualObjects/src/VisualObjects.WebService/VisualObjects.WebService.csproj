@@ -19,7 +19,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <PublishSelfContained>true</PublishSelfContained>
-    <PublishSingleFile>true</PublishSingleFile>
     <PublishTrimmed>true</PublishTrimmed>
   </PropertyGroup>
 
