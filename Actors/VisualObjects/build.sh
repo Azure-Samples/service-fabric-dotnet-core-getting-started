@@ -13,13 +13,13 @@ cd -
 cd `dirname $DIR/src/VisualObjects.ActorService/VisualObjects.ActorService.csproj`
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build 
-dotnet publish -c Release --self-contained --runtime linux-x64 -o ../../VisualObjectsApplicationCSharp/VisualObjects.ActorServicePkg/Code
+dotnet publish -c Release --runtime linux-x64 -o ../../VisualObjectsApplicationCSharp/VisualObjects.ActorServicePkg/Code
 cd -
 
 cd `dirname $DIR/src/VisualObjects.WebService/VisualObjects.WebService.csproj`
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build
-dotnet publish -c Release --self-contained --runtime linux-x64 -o ../..//VisualObjectsApplicationCSharp/VisualObjects.WebServicePkg/Code
+dotnet publish -c Release --runtime linux-x64 -o ../..//VisualObjectsApplicationCSharp/VisualObjects.WebServicePkg/Code
 cd -
 
 cp $DIR/ApplicationManifest.xml $DIR/VisualObjectsApplicationCSharp/.
