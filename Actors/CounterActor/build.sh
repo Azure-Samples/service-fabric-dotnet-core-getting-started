@@ -9,17 +9,17 @@ cd -
 cd $DIR/src/CounterActorApplication/CounterActor/
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build 
-dotnet publish -o ../../../CounterActorApplicationCSharp/CounterActorPkg/Code
+dotnet publish -c Release --self-contained --runtime linux-x64 -o ../../../CounterActorApplicationCSharp/CounterActorPkg/Code
 cd -
 
 cd $DIR/src/CounterActorApplication/CounterActorTestClient/
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build 
-dotnet publish -o ../../../CounterActorTestClient
+dotnet publish -c Release --self-contained --runtime linux-x64 -o ../../../CounterActorTestClient
 cd -
 
 cd $DIR/src/CounterActorApplication/CounterActor.WebService/CounterActorWebService/
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build 
-dotnet publish -o ../../../../CounterActorApplicationCSharp/CounterActorWebServicePkg/Code/
+dotnet publish -c Release --self-contained --runtime linux-x64 -o ../../../../CounterActorApplicationCSharp/CounterActorWebServicePkg/Code/
 cd -

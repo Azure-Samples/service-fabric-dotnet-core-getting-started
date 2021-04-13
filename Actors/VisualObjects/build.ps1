@@ -9,13 +9,13 @@ popd
 pushd src\VisualObjects.ActorService\
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build 
-dotnet publish -o ..\..\VisualObjectsApplicationCSharp\VisualObjects.ActorServicePkg\Code
+dotnet publish -c Release --self-contained --runtime win-x64 -o ..\..\VisualObjectsApplicationCSharp\VisualObjects.ActorServicePkg\Code
 popd
 
 pushd src\VisualObjects.WebService\
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build
-dotnet publish -o ..\..\VisualObjectsApplicationCSharp\VisualObjects.WebServicePkg\Code
+dotnet publish -c Release --self-contained --runtime win-x64 -o ..\..\VisualObjectsApplicationCSharp\VisualObjects.WebServicePkg\Code
 popd
 
 cp ApplicationManifest.xml VisualObjectsApplicationCSharp\.
