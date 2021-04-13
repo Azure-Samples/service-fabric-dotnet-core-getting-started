@@ -8,6 +8,11 @@
     <OutputType>Exe</OutputType>
     <PackageId>CounterActor</PackageId>
   </PropertyGroup>
+  <PropertyGroup>
+    <PublishSelfContained>true</PublishSelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="../CounterActor.Interfaces/CounterActor.Interfaces.csproj" />

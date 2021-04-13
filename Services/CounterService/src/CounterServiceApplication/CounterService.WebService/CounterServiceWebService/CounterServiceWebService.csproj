@@ -8,6 +8,11 @@
     <OutputType>Exe</OutputType>
     <PackageId>CounterServiceWebService</PackageId>
   </PropertyGroup>
+  <PropertyGroup>
+    <PublishSelfContained>true</PublishSelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="../../CounterService.Interfaces/CounterService.Interfaces.csproj" />

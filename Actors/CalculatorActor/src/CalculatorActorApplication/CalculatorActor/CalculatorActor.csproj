@@ -8,7 +8,11 @@
     <OutputType>Exe</OutputType>
     <PackageId>CalculatorActor</PackageId>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <PublishSelfContained>true</PublishSelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../CalculatorActor.Interfaces/CalculatorActor.Interfaces.csproj" />
   </ItemGroup>
