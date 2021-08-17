@@ -1,16 +1,19 @@
-pushd src\CalculatorActorApplication\CalculatorActor.Interfaces\
+$invocation = (Get-Variable MyInvocation).Value
+$rootpath = Split-Path $invocation.MyCommand.Path
+
+pushd $rootpath\src\CalculatorActorApplication\CalculatorActor.Interfaces\
 dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build
 popd
 
-pushd src\CalculatorActorApplication\CalculatorActor\
+pushd $rootpath\src\CalculatorActorApplication\CalculatorActor\
 dotnet restore -s https://api.nuget.org/v3/index.json 
 dotnet build 
-dotnet publish -c Release --self-contained --runtime win-x64 -o ..\..\..\CalculatorActorApplication\CalculatorActorPkg\Code
+dotnet publish -c Release --self-contained --runtime win-x64 -o ..\CalculatorActorPkg\Code
 popd
 
-pushd src\CalculatorActorApplication\CalculatorActorTestClient\
+pushd $rootpath\src\CalculatorActorApplication\CalculatorActorTestClient\
 dotnet restore -s https://api.nuget.org/v3/index.json
 dotnet build 
-dotnet publish -c Release --self-contained --runtime win-x64 -o ..\..\..\CalculatorActorTestClient
+dotnet publish -c Release --self-contained --runtime win-x64 -o ..\CalculatorActorTestClient
 popd
