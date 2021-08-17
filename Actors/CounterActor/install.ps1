@@ -1,4 +1,7 @@
-$AppPath = "$PSScriptRoot\CounterActorApplicationCSharp"
+$invocation = (Get-Variable MyInvocation).Value
+$rootpath = Split-Path $invocation.MyCommand.Path
+
+$AppPath = "$rootpath\CounterActorApplicationCSharp"
 $sdkInstallPath = (Get-ItemProperty 'HKLM:\Software\Microsoft\Service Fabric SDK').FabricSDKInstallPath
 $sfSdkPsModulePath = $sdkInstallPath + "Tools\PSModule\ServiceFabricSDK"
 Import-Module $sfSdkPsModulePath\ServiceFabricSDK.psm1
